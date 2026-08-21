@@ -1,1 +1,913 @@
-fuckingn igger
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+    
+</head>
+<body>
+  
+
+<meta charset="UTF-8">
+
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fallen</title>
+<link rel="icon" type="image/png" href="https://file.garden/aWlfqGYgcVhFp7er/download.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Rubik+Glitch&amp;family=Righteous&amp;display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/geared-steel-link-05245233-48.css">
+
+<style>
+  :root{
+    --online:#3ba55d;
+    --idle:#faa61a;
+    --dnd:#ed4245;
+    --offline:#747f8d;
+    --card:rgba(20,18,20,0.55);
+    --card-border:rgba(255,255,255,0.10);
+    --muted:#b9b6bb;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    min-height:100vh;
+    font-family:'Poppins', sans-serif;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    position:relative;
+    overflow-x:hidden;
+    background:#000;
+  }
+
+  #bg{
+    position:fixed; inset:0;
+    background-image:url('https://file.garden/aWlfqGYgcVhFp7er/a71fed9fde8376515e761aa2901891bc.gif');
+    background-size:cover;
+    background-position:center;
+    filter:blur(3px) brightness(0.55);
+    transform:scale(1.05);
+    z-index:-2;
+  }
+  #bg-overlay{
+    position:fixed; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+    z-index:-1;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  #entrance{
+    position:fixed; inset:0;
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#000;
+    cursor:pointer;
+    transition:opacity .8s ease;
+  }
+  #entrance-bg{
+    position:absolute; inset:0;
+    background-image:url('https://file.garden/aWlfqGYgcVhFp7er/a71fed9fde8376515e761aa2901891bc.gif');
+    background-size:cover;
+    background-position:center;
+    filter:blur(14px) brightness(0.4);
+    transform:scale(1.1);
+  }
+  #entrance-overlay{
+    position:absolute; inset:0;
+    background:rgba(0,0,0,0.45);
+  }
+  #doxx-btn{
+    position:relative;
+    z-index:1;
+    background:none;
+    border:none;
+    color:#cfcfd4;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:4px;
+    cursor:pointer;
+    padding:14px 26px;
+    transition:color .3s ease, transform .3s ease, text-shadow .3s ease;
+    animation:doxxPulse 2.6s ease-in-out infinite;
+  }
+  #doxx-btn:hover{
+    color:#ffffff;
+    transform:scale(1.06);
+    text-shadow:0 0 18px rgba(255,255,255,0.5);
+  }
+  @keyframes doxxPulse{
+    0%,100%{opacity:.65;}
+    50%{opacity:1;}
+  }
+  #entrance.hide{
+    opacity:0;
+    pointer-events:none;
+  }
+
+  body:not(.entered) .dashboard{
+    opacity:0;
+    pointer-events:none;
+  }
+
+  .dashboard{
+    display:flex;
+    align-items:flex-end;
+    gap:52px;
+    flex-wrap:wrap;
+    justify-content:center;
+    max-width:1240px;
+  }
+  .side-wrap{
+    animation:bob 6s ease-in-out infinite;
+  }
+  #servers-wrap{animation-delay:0s;}
+  #music-wrap{animation-delay:.4s;}
+  @keyframes bob{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-16px);}
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:22px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+    opacity:0;
+    transform:scale(.85);
+  }
+  body.entered .card{
+    animation:popIn .7s cubic-bezier(.34,1.56,.64,1) forwards;
+  }
+  body.entered #servers-card{animation-delay:.05s;}
+  body.entered #profile-card{animation-delay:.12s;}
+  body.entered #music-card{animation-delay:.19s;}
+  @keyframes popIn{
+    from{opacity:0; transform:scale(.85);}
+    to{opacity:1; transform:scale(1);}
+  }
+
+  .tilt{
+    transition:transform .25s ease, box-shadow .25s ease;
+    will-change:transform;
+  }
+  .tilt:hover{
+    box-shadow:0 30px 60px rgba(0,0,0,0.45);
+  }
+  #servers-card{
+    width:380px;
+    min-height:560px;
+    padding:34px 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:42px;
+  }
+  .server-tile{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background-color:rgba(0,0,0,0.35);
+    background-size:cover;
+    background-position:center;
+    border:none;
+    border-radius:16px;
+    padding:34px 20px;
+    text-align:center;
+    overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+    cursor:pointer;
+    flex:1 1 auto;
+    min-height:100%;
+  }
+  .server-tile::before{
+    content:'';
+    position:absolute; inset:0;
+    background:rgba(10,8,10,0.55);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    z-index:0;
+  }
+  .server-tile > *{
+    position:relative;
+    z-index:1;
+  }
+  .server-tile:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+  }
+  .server-tile:hover::before{
+    background:rgba(10,8,10,0.4);
+  }
+  .server-tile img{
+    width:84px; height:84px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:18px;
+    background:#222;
+    border:2px solid rgba(255,255,255,0.15);
+  }
+  .server-tile .s-name{
+    font-weight:600;
+    font-size:1.35rem;
+    margin-bottom:16px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);
+  }
+  .tag-row{display:flex; gap:6px; justify-content:center; flex-wrap:wrap;}
+  .tag{
+    background:rgba(255,255,255,0.12);
+    color:var(--muted);
+    font-size:.65rem;
+    padding:4px 9px;
+    border-radius:20px;
+  }
+
+  #profile-card{
+    width:300px;
+    padding:34px 26px 26px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .avatar-wrap{
+    position:relative;
+    width:110px; height:110px;
+    margin-bottom:16px;
+    animation:floaty 4.5s ease-in-out infinite;
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+  .avatar-wrap img.avatar{
+    width:110px; height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,0.15);
+  }
+  .avatar-decoration{
+    position:absolute;
+    top:-8%; left:-8%;
+    width:116%; height:116%;
+    pointer-events:none;
+    display:none;
+  }
+  .status-dot{
+    position:absolute;
+    bottom:2px; right:2px;
+    width:24px; height:24px;
+    border-radius:50%;
+    border:4px solid #17161a;
+    background:var(--offline);
+    transition:background .4s ease;
+    animation:pulseDot 2.4s ease-in-out infinite;
+  }
+  .status-dot.online{background:var(--online);}
+  .status-dot.idle{background:var(--idle);}
+  .status-dot.dnd{background:var(--dnd);}
+  .status-dot.offline{background:var(--offline);}
+  @keyframes pulseDot{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.0);}
+    50%{box-shadow:0 0 0 6px rgba(255,255,255,0.06);}
+  }
+
+  .brand-mark{
+    font-family:'Righteous', cursive;
+    font-size:1.7rem;
+    margin-bottom:14px;
+    opacity:.95;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    letter-spacing:1px;
+    color:#ffffff;
+    text-shadow:
+      0 0 10px rgba(255,255,255,0.85),
+      0 0 22px rgba(255,255,255,0.5),
+      0 2px 6px rgba(0,0,0,0.9);
+  }
+
+  .username{
+    font-family:'Righteous', cursive;
+    font-weight:400;
+    font-size:1.05rem;
+    letter-spacing:.5px;
+    margin-bottom:18px;
+    color:var(--muted);
+    text-shadow:0 1px 10px rgba(255,255,255,0.12);
+  }
+  @keyframes cursorBlink{
+    0%,49%{opacity:1;}
+    50%,100%{opacity:0;}
+  }
+
+  .view-pill{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+
+  .social-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .social-btn{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center;
+    transition:all .25s ease;
+  }
+  .social-btn img{width:16px; height:16px; filter:invert(1); opacity:.85;}
+  .social-btn:hover{
+    background:#fff;
+    transform:translateY(-3px);
+  }
+  .social-btn:hover img{filter:invert(0) brightness(0);}
+
+  .time-pill{
+    background:rgba(255,255,255,0.08);
+    color:var(--muted);
+    font-size:.72rem;
+    padding:6px 14px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+
+  .status-box{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:14px;
+    padding:12px 14px;
+    text-align:left;
+  }
+  .status-box .discord-ic{
+    width:34px; height:34px;
+    border-radius:8px;
+    background:rgba(88,101,242,0.18);
+    display:flex; align-items:center; justify-content:center;
+    color:#a9b1ff;
+    font-size:1.1rem;
+    flex-shrink:0;
+  }
+  .status-box .s-label{font-size:.75rem; font-weight:600;}
+  .status-box .s-text{font-size:.7rem; color:var(--muted);}
+  .status-box .s-text .type-cursor{
+    display:inline-block;
+    width:2px;
+    margin-left:2px;
+    background:var(--muted);
+    animation:cursorBlink .8s steps(1) infinite;
+  }
+
+  #music-card{
+    width:380px;
+    background:none;
+    border:none;
+    box-shadow:none;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    padding:0;
+  }
+
+  .flip-scene{
+    perspective:1600px;
+  }
+  .flip-card{
+    position:relative;
+    width:100%;
+    min-height:560px;
+    cursor:pointer;
+    transition:transform 1s cubic-bezier(.34,1.56,.64,1);
+    transform-style:preserve-3d;
+  }
+  .flip-card.flipped{transform:rotate3d(1,-1,0,180deg);}
+
+  .flip-face{
+    position:absolute;
+    inset:0;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:22px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  .flip-back{
+    transform:rotate3d(1,-1,0,180deg);
+  }
+  .flip-hint{
+    text-align:center;
+    font-size:.62rem;
+    letter-spacing:1.5px;
+    color:var(--muted);
+    opacity:.6;
+    margin-top:14px;
+  }
+
+  .back-title{
+    text-align:center;
+    font-size:.72rem;
+    letter-spacing:2px;
+    color:var(--muted);
+    font-weight:600;
+    margin-bottom:24px;
+  }
+  .back-section{
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .back-label{
+    color:var(--online);
+    font-size:.78rem;
+    font-weight:700;
+    margin-bottom:5px;
+  }
+  .back-value{
+    font-size:.9rem;
+    color:#fff;
+  }
+  .back-value.muted{
+    color:var(--muted);
+    font-size:.8rem;
+    line-height:1.5;
+    max-width:280px;
+    margin:0 auto;
+  }
+  .back-bar{
+    position:relative;
+    width:100%;
+    height:2px;
+    border-radius:2px;
+    background:rgba(255,255,255,0.2);
+    margin:14px 0 22px;
+  }
+  .back-bar-fill{
+    position:absolute; left:0; top:0; height:100%;
+    background:rgba(255,255,255,0.5);
+    border-radius:2px;
+    width:0%;
+  }
+  .back-bar-thumb{
+    position:absolute;
+    top:50%;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:#fff;
+    transform:translate(-50%,-50%);
+    left:0%;
+  }
+  .yt-btn{
+    display:block;
+    text-align:center;
+    background:#e0302d;
+    color:#fff;
+    font-weight:700;
+    font-size:.85rem;
+    padding:13px;
+    border-radius:12px;
+    transition:filter .2s ease, transform .2s ease;
+  }
+  .yt-btn:hover{filter:brightness(1.12); transform:translateY(-2px);}
+
+  .music-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .music-header .label{
+    font-size:.68rem;
+    letter-spacing:1.5px;
+    color:var(--muted);
+    font-weight:600;
+  }
+  .eq{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:14px;
+  }
+  .eq span{
+    width:3px;
+    background:var(--online);
+    border-radius:2px;
+    animation:eq 1s ease-in-out infinite;
+  }
+  .eq span:nth-child(1){height:6px; animation-delay:0s;}
+  .eq span:nth-child(2){height:14px; animation-delay:.2s;}
+  .eq span:nth-child(3){height:9px; animation-delay:.4s;}
+  @keyframes eq{
+    0%,100%{transform:scaleY(0.4);}
+    50%{transform:scaleY(1);}
+  }
+
+  .art-wrap{
+    width:100%;
+    aspect-ratio:1/1;
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:16px;
+    background:#111;
+  }
+  .art-wrap img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  #track-title{font-weight:700; font-size:1.05rem; margin-bottom:2px;}
+  #track-artist{color:var(--muted); font-size:.82rem; margin-bottom:14px;}
+
+  .time-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:.68rem;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .progress-bar{
+    position:relative;
+    width:100%;
+    height:4px;
+    border-radius:4px;
+    background:rgba(255,255,255,0.15);
+    cursor:pointer;
+    margin-bottom:18px;
+  }
+  #progress{
+    position:absolute; left:0; top:0; height:100%;
+    border-radius:4px;
+    background:linear-gradient(90deg,#e8e8e8,#ffffff);
+    width:0%;
+    pointer-events:none;
+  }
+
+  .player-controls{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:14px;
+  }
+  .player-controls button{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    color:#fff;
+    width:34px; height:34px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    font-size:1rem;
+    transition:all .2s ease;
+  }
+  .player-controls button:hover{
+    background:#fff; color:#111;
+    transform:translateY(-2px);
+  }
+  .player-controls #play-pause{
+    width:44px; height:44px;
+    font-size:1.3rem;
+    background:rgba(255,255,255,0.12);
+  }
+
+  .volume-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 4px;
+  }
+  .volume-row button{
+    background:none; border:none; color:var(--muted);
+    font-size:1.1rem; cursor:pointer; flex-shrink:0;
+  }
+  .volume-row input[type="range"]{
+    flex:1;
+    -webkit-appearance:none;
+    appearance:none;
+    height:4px;
+    border-radius:4px;
+    background:rgba(255,255,255,0.15);
+    outline:none;
+  }
+  .volume-row input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+  }
+  .volume-row input[type="range"]::-moz-range-thumb{
+    width:11px; height:11px;
+    border-radius:50%;
+    background:#fff;
+    border:none;
+    cursor:pointer;
+  }
+
+  .eq{transition:opacity .3s ease;}
+  .music-player:not(.is-playing) .eq span{animation-play-state:paused; opacity:.4;}
+
+  @media (max-width:760px){
+    .dashboard{flex-direction:column; align-items:center;}
+    #servers-card, #profile-card, #music-card{width:100%; max-width:340px;}
+  }
+
+  #back-btn{
+    position:fixed;
+    left:22px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2500;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:transparent;
+    border:none;
+    color:#fff;
+    padding:12px 18px 12px 14px;
+    border-radius:50px;
+    font-family:'Poppins', sans-serif;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+    box-shadow:none;
+    transition:transform .3s ease, text-shadow .3s ease, padding .3s ease;
+    animation:backFloat 3.2s ease-in-out infinite;
+    overflow:hidden;
+  }
+  #back-btn .back-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:22px; height:22px;
+    flex-shrink:0;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  #back-btn .back-icon i{font-size:1.2rem;}
+  #back-btn .back-label{
+    color:#ffffff;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  #back-btn:hover{
+    transform:translateY(-50%) scale(1.05);
+    text-shadow:0 2px 16px rgba(0,0,0,0.8);
+  }
+  #back-btn:hover .back-icon{
+    transform:translateX(-4px);
+  }
+  #back-btn:active{
+    transform:translateY(-50%) scale(.96);
+  }
+  @keyframes backFloat{
+    0%,100%{transform:translateY(-50%) translateX(0);}
+    50%{transform:translateY(-50%) translateX(6px);}
+  }
+  #back-btn:hover{animation-play-state:paused;}
+
+  @media (max-width:760px){
+    #back-btn{
+      left:14px;
+      padding:10px 14px;
+    }
+    #back-btn .back-label{display:none;}
+  }
+</style>
+
+
+
+<div id="entrance">
+  <div id="entrance-bg"></div>
+  <div id="entrance-overlay"></div>
+  <button id="doxx-btn">[ doxx me ]</button>
+</div>
+
+<div id="bg"></div>
+<div id="bg-overlay"></div>
+<div class="dashboard">
+
+  <div class="side-wrap" id="servers-wrap">
+    <div class="card tilt" id="servers-card">
+      <a class="server-tile" href="https://discord.gg/ZAvaXEY5v9" target="_blank" style="background-image:url('https://file.garden/aWlfqGYgcVhFp7er/salem.gif');">
+        <img id="server1-icon" src="https://discord.com/assets/f8389ac1a40319420746f762999e2a79.png" alt="Server icon">
+        <div class="s-name" id="server1-name">Loading server…</div>
+        <div class="tag-row">
+        </div>
+      </a>
+      <a class="server-tile" href="https://discord.gg/QaQnHZeck6" target="_blank" style="background-image:url('https://file.garden/aWlfqGYgcVhFp7er/mhbg2.gif');">
+        <img id="server2-icon" src="https://discord.com/assets/f8389ac1a40319420746f762999e2a79.png" alt="Server icon">
+        <div class="s-name" id="server2-name">Loading server…</div>
+        <div class="tag-row">
+        </div>
+      </a>
+    </div>
+  </div>
+
+ 
+  <div class="card" id="profile-card">
+    <div class="avatar-wrap">
+      <img class="avatar" src="https://i.pravatar.cc/300?img=68" alt="avatar">
+      <img class="avatar-decoration" id="avatar-decoration" alt="">
+      <span class="status-dot offline" id="status-dot"></span>
+    </div>
+
+    <div class="brand-mark" id="display-name">…</div>
+
+    <div class="username" id="discord-username">@…</div>
+
+    <div class="social-row">
+      <a class="social-btn" href="https://youtube.com/@fallenxyz" target="_blank" title="YouTube">
+        <img src="https://api.iconify.design/simple-icons/youtube.svg?color=%23ffffff" alt="YouTube">
+      </a>
+      <a class="social-btn" href="https://www.tiktok.com/@nellaf" target="_blank" title="TikTok">
+        <img src="https://api.iconify.design/simple-icons/tiktok.svg?color=%23ffffff" alt="TikTok">
+      </a>
+    </div>
+
+    <div class="time-pill" id="local-time">Local Time: 10:40 AM</div>
+    <div class="time-pill view-pill"><i class="bx bx-show"></i> <span id="view-count-number">…</span> views</div>
+
+    <div class="status-box">
+      <div class="discord-ic"><i class="bx bxl-discord-alt"></i></div>
+      <div>
+        <div class="s-label">Status</div>
+        <div class="s-text" id="custom-status">unfriending spree, keeping the real 1s</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-wrap" id="music-wrap">
+    <div class="card tilt music-player" id="music-card">
+      <div class="flip-scene">
+        <div class="flip-card" id="flip-card">
+
+          <div class="flip-face flip-front">
+            <div class="music-header">
+              <span class="label">NOW PLAYING</span>
+              <div class="eq"><span></span><span></span><span></span></div>
+            </div>
+
+            <div class="art-wrap">
+              <img id="track-artwork" src="" alt="Album art">
+            </div>
+
+            <div id="track-title">Loading track…</div>
+            <div id="track-artist">&nbsp;</div>
+
+            <div class="time-row">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+            <div class="progress-bar">
+              <div id="progress"></div>
+            </div>
+
+
+            <div class="volume-row">
+              <button id="mute-toggle"><i class="bx bx-volume-full"></i></button>
+              <input type="range" id="volume-slider" min="0" max="100" value="60">
+            </div>
+
+            <div class="flip-hint">CLICK TO VIEW CREDITS</div>
+          </div>
+
+          <div class="flip-face flip-back">
+            <div class="back-title">TRACK INFO &amp; CREDITS</div>
+
+            <div class="back-section">
+              <div class="back-label">Artist</div>
+              <div class="back-value" id="back-artist">—</div>
+            </div>
+
+            <div class="back-section">
+              <div class="back-label">Track</div>
+              <div class="back-value" id="back-album">—</div>
+            </div>
+
+            <div class="back-section">
+              <div class="back-label">Credits</div>
+              <div class="back-value muted" id="back-credits">This track is currently playing as the background music.</div>
+            </div>
+
+            <div class="back-bar">
+              <div class="back-bar-fill" id="back-fill"></div>
+              <div class="back-bar-thumb" id="back-thumb"></div>
+            </div>
+
+            <a class="yt-btn" id="yt-btn" href="https://www.youtube.com/" target="_blank">Open on YouTube</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="background-music" preload="metadata"></audio>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+const entranceEl = document.getElementById('entrance');
+const doxxBtn = document.getElementById('doxx-btn');
+
+entranceEl.addEventListener('click', () => {
+  document.body.classList.add('entered'); // triggers the pop-in on the 3 cards
+  entranceEl.classList.add('hide');
+  setTimeout(() => { entranceEl.style.display = 'none'; }, 800);
+});
+
+const UTC_OFFSET = 8;
+function updateLocalTime(){
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const local = new Date(utc + UTC_OFFSET * 3600000);
+  let h = local.getHours();
+  const m = local.getMinutes();
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  document.getElementById('local-time').textContent =
+    `Local Time: ${h}:${m < 10 ? '0' : ''}${m} ${ampm}`;
+}
+updateLocalTime();
+setInterval(updateLocalTime, 30000);
+
+function attachTilt(el, maxDeg){
+  if(!el) return;
+  el.addEventListener('mouseenter', () => { el.style.transition = 'transform .15s ease'; });
+  el.addEventListener('mousemove', (e) => {
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const rotY = ((x - r.width / 2) / (r.width / 2)) * maxDeg;
+    const rotX = -((y - r.height / 2) / (r.height / 2)) * maxDeg;
+    el.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.015)`;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transition = 'transform .5s ease';
+    el.style.transform = '';
+  });
+}
+attachTilt(document.getElementById('servers-card'), 7);
+attachTilt(document.getElementById('music-card'), 6);
+
+const flipCard = document.getElementById('flip-card');
+flipCard.addEventListener('click', (e) => {
+  if (e.target.closest('.player-controls, .volume-row, .progress-bar, button, input')) return;
+  flipCard.classList.toggle('flipped');
+});
+document.getElementById('yt-btn').addEventListener('click', (e) => {
+  e.stopPropagation(); // don't flip back while opening the link
+});
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="eyescript.js"></script>
+<script src="lanyard.js"></script>
+<script src="protect.js"></script>
+<script src="servers.js"></script>
+<script src="music-player.js"></script>
+</body></html>
